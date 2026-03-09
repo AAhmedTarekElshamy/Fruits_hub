@@ -65,7 +65,7 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
               padding: const EdgeInsets.symmetric(horizontal: KHorizntalPadding) ,
               child: CustomButton(
                 onPressed:(){
-                  Prefs.setBool(KIsOnBoardingViewSeen, true);
+                  Prefs.setBool(KIsOnBoardingViewSeen , true);
                   Navigator.of(context).pushReplacementNamed( LoginView.routeName );
                 } ,
                 label: "Start Now".tr(),
