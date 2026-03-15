@@ -1,9 +1,11 @@
+
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 import 'core/helper_functions/on_generate_routes.dart';
 
 import 'core/services/shared_preferences_singleton.dart';
+import 'core/utils/app_colors.dart';
 import 'core/utils/app_constants.dart';
 import 'features/splash/views/splash_view.dart';
 
@@ -19,7 +21,7 @@ Future<void> main() async {
       ],
       path: AppConstants.translations,
       fallbackLocale: const Locale('ar'),
-      saveLocale: true,
+    //  saveLocale: true,
       child: const MyApp(),
     ),
   );
@@ -40,9 +42,12 @@ class MyApp extends StatelessWidget {
 
       debugShowCheckedModeBanner: false,
       onGenerateRoute: onGenerateRoute,
+
       initialRoute: SplashView.routeName,
       theme: ThemeData(
         fontFamily: 'Cairo',
+        scaffoldBackgroundColor: Colors.white,
+        colorScheme: ColorScheme.fromSeed(seedColor:  AppColors.PrimaryColor),
       ),
 
 

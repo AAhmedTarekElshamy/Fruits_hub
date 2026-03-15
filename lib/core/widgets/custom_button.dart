@@ -2,6 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 import '../utils/app_colors.dart';
+import '../utils/app_text_styles.dart';
 
 class CustomButton extends StatelessWidget {
   const CustomButton({
@@ -50,22 +51,26 @@ class CustomButton extends StatelessWidget {
           ),
           minimumSize: Size(double.infinity, height),
 
-          disabledBackgroundColor: resolvedColor.withValues(alpha: 0.6),  // ✅ no withOpacity
-          disabledForegroundColor: textColor.withValues(alpha: 0.8),      // ✅ no withOpacity
+          disabledBackgroundColor:
+              resolvedColor.withValues(alpha: 0.6), // ✅ no withOpacity
+          disabledForegroundColor:
+              textColor.withValues(alpha: 0.8), // ✅ no withOpacity
         ),
         child: isLoading
             ? SizedBox(
-          height: 24,
-          width: 24,
-          child: CircularProgressIndicator(
-            color: textColor,
-            strokeWidth: 2.5,
-          ),
-        )
+                height: 24,
+                width: 24,
+                child: CircularProgressIndicator(
+                  color: textColor,
+                  strokeWidth: 2.5,
+                ),
+              )
             : Text(
-          label.tr(),
-          textAlign: TextAlign.center,
-        ),
+                style: TextStyles.bold16
+                    .copyWith(color: Colors.white, fontFamily: 'Cairo'),
+                label.tr(),
+                textAlign: TextAlign.center,
+              ),
       ),
     );
   }

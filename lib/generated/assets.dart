@@ -2,16 +2,19 @@
 class Assets {
   Assets._();
 
-  //static const String cairoCairoVariableFontSlnt,wght = 'assets/fonts/Cairo/Cairo-VariableFont_slnt,wght.ttf';
+  static const String cairoCairoVariableFontSlntWght = 'assets/fonts/Cairo/Cairo-VariableFont_slnt,wght.ttf';
   static const String cairoOFL = 'assets/fonts/Cairo/OFL.txt';
   static const String imagesAppIcon = 'assets/images/app_icon.png';
+  static const String imagesAppleSocialIcons = 'assets/images/apple_social_icons.svg';
   static const String imagesCheck = 'assets/images/Check.svg';
   static const String imagesEdit = 'assets/images/edit.svg';
   static const String imagesFacebookIcon = 'assets/images/facebook_icon.svg';
+  static const String imagesFacebookSocialIcons = 'assets/images/facebook_social_icons.svg';
   static const String imagesFeaturedItemBackground = 'assets/images/featured_item_background.svg';
   static const String imagesFilter = 'assets/images/filter.svg';
   static const String imagesFilter2 = 'assets/images/filter2.svg';
   static const String imagesGoogleIcon = 'assets/images/google_icon.svg';
+  static const String imagesGoogleSocialIcons = 'assets/images/google_social_icons.svg';
   static const String imagesLocation = 'assets/images/location.svg';
   static const String imagesLogo = 'assets/images/logo.svg';
   static const String imagesNotification = 'assets/images/notification.svg';
@@ -36,5 +39,4 @@ class Assets {
   static const String staticCairoSemiBold = 'assets/fonts/Cairo/static/Cairo-SemiBold.ttf';
   static const String translationsAr = 'assets/translations/ar.json';
   static const String translationsEn = 'assets/translations/en.json';
-
 }

@@ -15,107 +15,96 @@ class OnBoardingPageView extends StatelessWidget {
   Widget build(BuildContext context) {
     return PageView(
       controller: pageController,
-
       children: [
         PageViewItem(
           pageViewItemModel: PageViewItemModel(
-            image: Assets.images.pageViewItem1Image,
-            backgroundImage: Assets.images.pageViewItem1BackgroundImage,
+            image: Assets.images.pageViewItem1Image.path,
+            backgroundImage: Assets.images.pageViewItem1BackgroundImage.path,
             subTitle:
-                "Discover a unique shopping experience with FruitHUB. Explore our wide range of premium fresh fruits and get the best deals with high quality."
-                    .tr(),
+            "Discover a unique shopping experience with FruitHUB. Explore our wide range of premium fresh fruits and get the best deals with high quality."
+                .tr(),
             title: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
                   'Hello in'.tr(),
                   textAlign: TextAlign.center,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontFamily: 'Cairo',
                     fontWeight: FontWeight.w700,
                     fontSize: 23,
                     color: Color(0xff0C0D0D),
                   ),
                 ),
-                SizedBox(
-                  width: 4,
-                ),
+                const SizedBox(width: 4),
                 context.locale.languageCode == 'en'
                     ? Row(
-                        children: [
-                          Text(
-                            'Fruit'.tr(),
-                            style: TextStyle(
-                              color: Color(0xff1B5E37),
-                              fontFamily: 'Cairo',
-                              fontWeight: FontWeight.w700,
-                              fontSize: 23,
-                            ),
-                          ),
-                          Text(
-                            'HUB'.tr(),
-                            style: TextStyle(
-                              color: Color(0xffF4A91F),
-                              fontFamily: 'Cairo',
-                              fontWeight: FontWeight.w700,
-                              fontSize: 23,
-                            ),
-                          ),
-                        ],
-                      )
-                    : Row(
-                        children: [
-                          Text(
-                            'HUB'.tr(),
-                            style: TextStyle(
-                              color: Color(0xffF4A91F),
-                              fontFamily: 'Cairo',
-                              fontWeight: FontWeight.w700,
-                              fontSize: 23,
-                            ),
-                          ),
-                          Text(
-                            'Fruit'.tr(),
-                            style: TextStyle(
-                              color: Color(0xff1B5E37),
-                              fontFamily: 'Cairo',
-                              fontWeight: FontWeight.w700,
-                              fontSize: 23,
-                            ),
-                          ),
-                        ],
+                  children: [
+                    Text(
+                      'Fruit'.tr(),
+                      style: const TextStyle(
+                        color: Color(0xff1B5E37),
+                        fontFamily: 'Cairo',
+                        fontWeight: FontWeight.w700,
+                        fontSize: 23,
                       ),
+                    ),
+                    Text(
+                      'HUB'.tr(),
+                      style: const TextStyle(
+                        color: Color(0xffF4A91F),
+                        fontFamily: 'Cairo',
+                        fontWeight: FontWeight.w700,
+                        fontSize: 23,
+                      ),
+                    ),
+                  ],
+                )
+                    : Row(
+                  children: [
+                    Text(
+                      'HUB'.tr(),
+                      style: const TextStyle(
+                        color: Color(0xffF4A91F),
+                        fontFamily: 'Cairo',
+                        fontWeight: FontWeight.w700,
+                        fontSize: 23,
+                      ),
+                    ),
+                    Text(
+                      'Fruit'.tr(),
+                      style: const TextStyle(
+                        color: Color(0xff1B5E37),
+                        fontFamily: 'Cairo',
+                        fontWeight: FontWeight.w700,
+                        fontSize: 23,
+                      ),
+                    ),
+                  ],
+                ),
               ],
             ),
           ),
-          onSkip: ()   {
+          onSkip: () {
             Prefs.setBool(KIsOnBoardingViewSeen, true);
-            Navigator.of(context).pushReplacementNamed( LoginView.routeName );
-            // if (context.locale.languageCode == 'en') {
-            //   await context.setLocale(const Locale('ar'));
-            // } else {
-            //   await context.setLocale(const Locale('en'));
-            // }
-
+            Navigator.of(context).pushReplacementNamed(LoginView.routeName);
           },
-           isVisible:true ,// ((pageController.hasClients
-          //     ? pageController.page!.round(): 0) != 1),
-
-        ) ,
+          isVisible: true,
+        ),
         PageViewItem(
           pageViewItemModel: PageViewItemModel(
-            image: Assets.images.pageViewItem1Image,
-            backgroundImage: Assets.images.pageViewItem1BackgroundImage,
+            image: Assets.images.pageViewItem2Image.path,
+            backgroundImage: Assets.images.pageViewItem2BackgroundImage.path,
             subTitle:
-                "We provide you with the finest carefully selected fruits. Check out the details, photos, and reviews to ensure you choose the perfect fruit."
-                    .tr(),
+            "We provide you with the finest carefully selected fruits. Check out the details, photos, and reviews to ensure you choose the perfect fruit."
+                .tr(),
             title: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
                   "search and shop".tr(),
                   textAlign: TextAlign.center,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontFamily: 'Cairo',
                     fontWeight: FontWeight.w700,
                     fontSize: 23,
@@ -125,17 +114,10 @@ class OnBoardingPageView extends StatelessWidget {
               ],
             ),
           ),
-          onSkip: () async {
-            Navigator.of(context).pushReplacementNamed( LoginView.routeName );
-            // if (context.locale.languageCode == 'en') {
-            //   await context.setLocale(const Locale('ar'));
-            // } else {
-            //   await context.setLocale(const Locale('en'));
-            // }
+          onSkip: () {
+            Navigator.of(context).pushReplacementNamed(LoginView.routeName);
           },
-           isVisible: false ,              //((pageController.hasClients
-          //     ? pageController.page!.round(): 0) != 1),
-
+          isVisible: false,
         ),
       ],
     );

@@ -6,6 +6,15 @@
   "HUB": "HUB",
   "search and shop": "search and shop",
   "We provide you with the finest carefully selected fruits. Check out the details, photos, and reviews to ensure you choose the perfect fruit.": "We provide you with the finest carefully selected fruits. Check out the details, photos, and reviews to ensure you choose the perfect fruit.",
-  "Start Now":  "Start Now"
-
+  "Start Now":  "Start Now",
+  "Login" : "Login",
+  "Email": "Email",
+  "Password": "كلمة المرور",
+  "Did you forget your password?": "Did you forget your password?",
+  "Don't have account ": "Don't have account ",
+  "create account": "create account",
+  "Or": "Or",
+  "Login with Facebook": "Login with Facebook",
+  "Login with Google": "Login with Google",
+  "Login with Aplle": "Login with Aplle"
 }

@@ -1,6 +1,5 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:fruits_hub/features/auth/presentation/views/login_view.dart';
 
 import '../../../../constants.dart';
@@ -17,8 +16,7 @@ class SplashViewBody extends StatefulWidget {
 
 class _SplashViewBodyState extends State<SplashViewBody> {
   @override
-  @override
-  void initState()  {
+  void initState() {
     super.initState();
     executeNavigation();
   }
@@ -30,42 +28,28 @@ class _SplashViewBodyState extends State<SplashViewBody> {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Row(
-          mainAxisAlignment:context.locale.languageCode == 'en'? MainAxisAlignment.start : MainAxisAlignment.end,
-          children: [SvgPicture.asset(Assets.images.plant)],
+          mainAxisAlignment: context.locale.languageCode == 'en'
+              ? MainAxisAlignment.start
+              : MainAxisAlignment.end,
+          children: [Assets.images.plant.svg()],
         ),
-        SvgPicture.asset(Assets.images.logo),
-        SvgPicture.asset(
-          Assets.images.splashBottom,
-          fit: BoxFit.fill,
-        ),
+        Assets.images.logo.svg(),
+        Assets.images.splashBottom.svg(fit: BoxFit.fill),
       ],
     );
   }
 
-
   void executeNavigation() {
     Future.delayed(
-        const Duration(seconds: 3),
-            () async {
-              bool isOnBoardingViewSeen =   Prefs.getBool(KIsOnBoardingViewSeen);
-              if (isOnBoardingViewSeen == false){
-              Navigator.pushReplacementNamed(context, OnBoardingView.routeName);
-              }else{
-                Navigator.pushReplacementNamed(context, LoginView.routeName);
-              }
-        });
+      const Duration(seconds: 3),
+          () async {
+        bool isOnBoardingViewSeen = Prefs.getBool(KIsOnBoardingViewSeen);
+        if (isOnBoardingViewSeen == false) {
+          Navigator.pushReplacementNamed(context, OnBoardingView.routeName);
+        } else {
+          Navigator.pushReplacementNamed(context, LoginView.routeName);
+        }
+      },
+    );
   }
-/*
-*   void executeNavigation() {
-    Future.delayed(const Duration(seconds: 3), () {
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(
-          builder: (context) => const OnBoardingView(),
-        ),
-      );
-    });
-  }
-*/
-
 }

@@ -7,5 +7,15 @@
   "HUB": "HUB",
   "search and shop": "ابحث وتسوق",
   "We provide you with the finest carefully selected fruits. Check out the details, photos, and reviews to ensure you choose the perfect fruit.": "نقدم لك أفضل الفواكه المختارة بعناية. اطلع على التفاصيل والصور والتقييمات لتتأكد من اختيار الفاكهة المثالية",
-  "Start Now": "ابدأ الان"
+  "Start Now": "ابدأ الان",
+  "Login" : "تسجيل دخول",
+  "Email": "البريد الإلكتروني",
+  "Password": "كلمة المرور",
+  "Did you forget your password?": "نسيت كلمة المرور؟",
+  "Don't have account ": "لا تمتلك حساب؟ ",
+  "create account": "قم بإنشاء حساب",
+  "Or": "أو",
+  "Login with Facebook": "تسجيل بواسطة فيسبوك",
+  "Login with Google":"تسجيل بواسطة جوجل" ,
+  "Login with Aplle": "تسجيل بواسطة أبل"
 }
