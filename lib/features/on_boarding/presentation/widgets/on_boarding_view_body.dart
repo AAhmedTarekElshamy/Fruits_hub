@@ -19,11 +19,9 @@ class OnBoardingViewBody extends StatefulWidget {
 class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
   late PageController pageController  ;
   var currentIndex = 0;
-  @override
 
   @override
   void initState() {
-
     pageController = PageController();
     pageController.addListener(() {
       setState(() {
@@ -32,8 +30,9 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
     });
     super.initState();
   }
+  
   @override
-  dispose(){
+  void dispose(){
     pageController.dispose();
     super.dispose();
   }
@@ -53,11 +52,11 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
             ),
 
           ),
-          SizedBox(
+          const SizedBox(
             height: 29,
           ),
           Visibility(
-            visible:currentIndex==1?true:false,   //pageController.page!.round() !=0 ,
+            visible: currentIndex == 1,
             maintainSize: true,
             maintainAnimation: true,
             maintainState: true,
@@ -68,18 +67,13 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
                   Prefs.setBool(KIsOnBoardingViewSeen , true);
                   Navigator.of(context).pushReplacementNamed( LoginView.routeName );
                 } ,
-                label: "Start Now".tr(),
-
+                label: "start_now",
               ),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 43,
           ),
-
-
-
-
         ],
       ),
     );

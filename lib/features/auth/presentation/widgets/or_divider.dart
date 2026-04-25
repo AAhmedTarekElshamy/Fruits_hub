@@ -18,7 +18,7 @@ class OrDivider extends StatelessWidget {
             ),
           ),
         SizedBox(width: 17.8,),
-        Text('Or'.tr(),style:  TextStyles.semiBold16.copyWith(fontFamily: "Cairo",color: Color(0xff0C0D0D)),),
+        Text("or".tr(),style:  TextStyles.semiBold16.copyWith(fontFamily: "Cairo",color: Color(0xff0C0D0D)),),
         SizedBox(width: 17.8,),
         Expanded(
           child: Divider(

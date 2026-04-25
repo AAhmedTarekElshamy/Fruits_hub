@@ -20,14 +20,12 @@ class OnBoardingPageView extends StatelessWidget {
           pageViewItemModel: PageViewItemModel(
             image: Assets.images.pageViewItem1Image.path,
             backgroundImage: Assets.images.pageViewItem1BackgroundImage.path,
-            subTitle:
-            "Discover a unique shopping experience with FruitHUB. Explore our wide range of premium fresh fruits and get the best deals with high quality."
-                .tr(),
+            subTitle: "Discover_unique_shopping".tr(),
             title: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  'Hello in'.tr(),
+                  "hello_in".tr(),
                   textAlign: TextAlign.center,
                   style: const TextStyle(
                     fontFamily: 'Cairo',
@@ -39,49 +37,49 @@ class OnBoardingPageView extends StatelessWidget {
                 const SizedBox(width: 4),
                 context.locale.languageCode == 'en'
                     ? Row(
-                  children: [
-                    Text(
-                      'Fruit'.tr(),
-                      style: const TextStyle(
-                        color: Color(0xff1B5E37),
-                        fontFamily: 'Cairo',
-                        fontWeight: FontWeight.w700,
-                        fontSize: 23,
-                      ),
-                    ),
-                    Text(
-                      'HUB'.tr(),
-                      style: const TextStyle(
-                        color: Color(0xffF4A91F),
-                        fontFamily: 'Cairo',
-                        fontWeight: FontWeight.w700,
-                        fontSize: 23,
-                      ),
-                    ),
-                  ],
-                )
+                        children: [
+                          Text(
+                            'Fruit'.tr(),
+                            style: const TextStyle(
+                              color: Color(0xff1B5E37),
+                              fontFamily: 'Cairo',
+                              fontWeight: FontWeight.w700,
+                              fontSize: 23,
+                            ),
+                          ),
+                          Text(
+                            'HUB'.tr(),
+                            style: const TextStyle(
+                              color: Color(0xffF4A91F),
+                              fontFamily: 'Cairo',
+                              fontWeight: FontWeight.w700,
+                              fontSize: 23,
+                            ),
+                          ),
+                        ],
+                      )
                     : Row(
-                  children: [
-                    Text(
-                      'HUB'.tr(),
-                      style: const TextStyle(
-                        color: Color(0xffF4A91F),
-                        fontFamily: 'Cairo',
-                        fontWeight: FontWeight.w700,
-                        fontSize: 23,
+                        children: [
+                          Text(
+                            'HUB'.tr(),
+                            style: const TextStyle(
+                              color: Color(0xffF4A91F),
+                              fontFamily: 'Cairo',
+                              fontWeight: FontWeight.w700,
+                              fontSize: 23,
+                            ),
+                          ),
+                          Text(
+                            'Fruit'.tr(),
+                            style: const TextStyle(
+                              color: Color(0xff1B5E37),
+                              fontFamily: 'Cairo',
+                              fontWeight: FontWeight.w700,
+                              fontSize: 23,
+                            ),
+                          ),
+                        ],
                       ),
-                    ),
-                    Text(
-                      'Fruit'.tr(),
-                      style: const TextStyle(
-                        color: Color(0xff1B5E37),
-                        fontFamily: 'Cairo',
-                        fontWeight: FontWeight.w700,
-                        fontSize: 23,
-                      ),
-                    ),
-                  ],
-                ),
               ],
             ),
           ),
@@ -95,14 +93,12 @@ class OnBoardingPageView extends StatelessWidget {
           pageViewItemModel: PageViewItemModel(
             image: Assets.images.pageViewItem2Image.path,
             backgroundImage: Assets.images.pageViewItem2BackgroundImage.path,
-            subTitle:
-            "We provide you with the finest carefully selected fruits. Check out the details, photos, and reviews to ensure you choose the perfect fruit."
-                .tr(),
+            subTitle: "We_provide_finest_fruits".tr(),
             title: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  "search and shop".tr(),
+                  "search_and_shop".tr(),
                   textAlign: TextAlign.center,
                   style: const TextStyle(
                     fontFamily: 'Cairo',

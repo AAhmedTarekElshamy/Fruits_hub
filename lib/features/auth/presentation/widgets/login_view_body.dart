@@ -26,14 +26,14 @@ class LoginViewBody extends StatelessWidget {
               height: 24,
             ),
             CustomTextField(
-              hintText: "Email".tr(),
+              hintText: "email".tr(),
               textInputType: TextInputType.emailAddress,
             ),
             const SizedBox(
               height: 16,
             ),
             CustomTextField(
-              hintText: "Password".tr(),
+              hintText: "password".tr(),
               textInputType: TextInputType.visiblePassword,
               suffixIcon: IconButton(
                   onPressed: () {},
@@ -49,7 +49,7 @@ class LoginViewBody extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 Text(
-                  "Did you forget your password?".tr(),
+                  "forgot_password".tr(),
                   style: TextStyles.semiBold13.copyWith(
                       color: AppColors.lightPrimaryColor, fontFamily: 'Cairo'),
                   textAlign: TextAlign.end,
@@ -60,7 +60,7 @@ class LoginViewBody extends StatelessWidget {
               height: 32,
             ),
             CustomButton(
-                label: "Login".tr(),
+                label: "login",
                 onPressed: () {
                   // Navigator.pushNamed(context, '/home');
                 }),
@@ -76,15 +76,15 @@ class LoginViewBody extends StatelessWidget {
             const  SizedBox(
               height: 16,
             ),
-            SocialButton( onPressed: (){},text: "Login with Google".tr(),icon: Assets.images.googleSocialIcons.path,),
+            SocialButton( onPressed: (){},text: "login_google".tr(),icon: Assets.images.googleSocialIcons.path,),
             const  SizedBox(
               height: 16,
             ),
-            SocialButton( onPressed: (){},text: "Login with Aplle".tr(),icon: Assets.images.appleSocialIcons.path,),
+            SocialButton( onPressed: (){},text: "login_apple".tr(),icon: Assets.images.appleSocialIcons.path,),
             const  SizedBox(
               height: 16,
             ),
-            SocialButton( onPressed: (){},text: "Login with Facebook".tr(),icon: Assets.images.facebookSocialIcons.path,),
+            SocialButton( onPressed: (){},text: "login_facebook".tr(),icon: Assets.images.facebookSocialIcons.path,),
 
           ],
         ),

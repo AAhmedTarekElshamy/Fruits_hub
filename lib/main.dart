@@ -1,5 +1,6 @@
 
 import 'package:easy_localization/easy_localization.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
 import 'core/helper_functions/on_generate_routes.dart';
@@ -8,10 +9,15 @@ import 'core/services/shared_preferences_singleton.dart';
 import 'core/utils/app_colors.dart';
 import 'core/utils/app_constants.dart';
 import 'features/splash/views/splash_view.dart';
+import 'firebase_options.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+
   await Prefs.init();
   runApp(
     EasyLocalization(

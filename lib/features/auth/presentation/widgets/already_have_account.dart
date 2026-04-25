@@ -1,28 +1,28 @@
 import 'package:easy_localization/easy_localization.dart';
-import 'package:flutter/gestures.dart';
+import 'package:flutter/gestures.dart'; // ✅ Added
 import 'package:flutter/material.dart';
 
-import '../../features/auth/presentation/views/signup_view.dart';
-import '../utils/app_colors.dart';
-import '../utils/app_text_styles.dart';
+import '../../../../core/utils/app_colors.dart';
+import '../../../../core/utils/app_text_styles.dart';
 
-class DontHaveAccountWidget extends StatelessWidget {
-  const DontHaveAccountWidget({super.key});
+
+class AlreadyHaveAccount extends StatelessWidget {
+  const AlreadyHaveAccount({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Text.rich(
       TextSpan(
-        text: "Don't_have_account".tr(),
+        text: "already_have_account".tr(),
         style: TextStyles.semiBold16
-            .copyWith(fontFamily: "Cairo", color: Color(0xff949D9E)),
+            .copyWith(fontFamily: "Cairo", color: const Color(0xff949D9E)),
         children: [
           TextSpan(
             recognizer: TapGestureRecognizer()
               ..onTap = () {
-                Navigator.pushNamed(context, SignupView.routeName);
+                Navigator.pop(context);
               },
-            text: "create_account".tr(),
+            text: "login".tr(),
             style: TextStyles.semiBold16.copyWith(
               fontFamily: "Cairo",
               color: AppColors.lightPrimaryColor,
@@ -32,4 +32,5 @@ class DontHaveAccountWidget extends StatelessWidget {
       ),
     );
   }
+
 }
