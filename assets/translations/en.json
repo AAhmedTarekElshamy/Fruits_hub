@@ -22,6 +22,12 @@
   "agree_terms": "By creating an account, you agree",
   "terms_and_conditions": "our Terms   and Conditions",
   "create_new_account": "Create new account",
-  "already_have_account": "Already have account?"
+  "already_have_account": "Already have account?",
+  "Something_went_wrong": "Something went wrong",
+  "account_already_exists": "The account already exists for that email.",
+  "weak_password": "The password provided is too weak.",
+  "signup_success" :"Signup successful",
+  "please_accept_terms": "please_accept_terms",
+  "no_internet_connection": "no_internet_connection"
 
 }

@@ -23,7 +23,12 @@
   "agree_terms": "من خلال إنشاء حساب، فإنك توافق علي ",
   "terms_and_conditions": "الشروط   والأحكام الخاصة بنا",
   "create_new_account": "إنشاء حساب جديد",
-  "already_have_account": "تمتلك حساب بالفعل؟"
-
+  "already_have_account": "تمتلك حساب بالفعل؟",
+  "Something_went_wrong": "حدث خطأ ما",
+  "account_already_exists": "الحساب لهذ الايميل موجود بالفعل ",
+  "weak_password": "الرقم السري ضعيف جدا",
+  "signup_success": "نجح تسجيل الدخول",
+  "please_accept_terms": "يجب الموافقة علي الشروط و الأحكام",
+  "no_internet_connection": "لا يوجد انترنت"
 
 }

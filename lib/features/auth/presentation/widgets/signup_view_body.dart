@@ -1,64 +1,104 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruits_hub/constants.dart';
 import 'package:fruits_hub/core/widgets/custom_button.dart';
 import 'package:fruits_hub/features/auth/presentation/widgets/terms_and_conditions.dart';
 
+import '../../../../core/helper_functions/snackbar.dart';
 import '../../../../core/widgets/custom_text_field.dart';
+import '../../../../core/widgets/password_field.dart';
+import '../cubits/signup_cubit/cubit.dart';
+
 import 'already_have_account.dart';
 
-class SignupViewBody extends StatelessWidget {
+class SignupViewBody extends StatefulWidget {
   const SignupViewBody({super.key});
+
+  @override
+  State<SignupViewBody> createState() => _SignupViewBodyState();
+}
+
+class _SignupViewBodyState extends State<SignupViewBody> {
+  final GlobalKey<FormState>  formKey = GlobalKey<FormState>();
+  AutovalidateMode  autoValidateMode = AutovalidateMode.disabled;
+ late String name ,email ,password;
+
+  late   bool isTermsAccepted = false;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: KHorizntalPadding),
-      child: Column(
-        children: [
-          const SizedBox(
-            height: 24,
-          ),
-          CustomTextField(
-            hintText: "full_name".tr(),
-            textInputType: TextInputType.name,
-          ),
-          const SizedBox(
-            height: 16,
-          ),
-          CustomTextField(
-            hintText: "email".tr(),
-            textInputType: TextInputType.emailAddress,
-          ),
-          const SizedBox(
-            height: 16,
-          ),
-          CustomTextField(
-            hintText: "password".tr(),
-            textInputType: TextInputType.visiblePassword,
-            suffixIcon: IconButton(
-                onPressed: () {},
-                icon: const Icon(
-                  Icons.remove_red_eye_sharp,
-                  color: Color(0xffC9CECF),
-                )),
-          ),
-          const SizedBox(
-            height: 16,
-          ),
-          const TermsAndConditions(),
-          const SizedBox(
-            height: 30,
-          ),
-          CustomButton(label: "create_new_account".tr(), onPressed: () {}),
-          const SizedBox(
-            height: 26,
-          ),
-          const AlreadyHaveAccount(),
-          SizedBox(
-            height: 20,
-          ),
-        ],
+      child: Form(
+        key: formKey,
+        autovalidateMode: autoValidateMode,
+        child: Column(
+          children: [
+            const SizedBox(
+              height: 24,
+            ),
+            CustomTextField(
+              hintText: "full_name".tr(),
+              textInputType: TextInputType.name,
+              onSaved: (value) {
+                name = value!;
+              },
+            ),
+
+            const SizedBox(
+              height: 16,
+            ),
+            CustomTextField(
+              hintText: "email".tr(),
+              textInputType: TextInputType.emailAddress,
+              onSaved: (value){
+                email = value!;
+              },
+            ),
+            const SizedBox(
+              height: 16,
+            ),
+            PasswordField(onSaved: (value) {
+              password = value!;
+            },),
+            const SizedBox(
+              height: 16,
+            ),
+            TermsAndConditions(onChanged: (value) {
+              setState(() {
+                isTermsAccepted = value;
+              });
+            },),
+            const SizedBox(
+              height: 30,
+            ),
+            CustomButton(label: "create_new_account".tr(), onPressed: () {
+              if (formKey.currentState!.validate()) {
+                formKey.currentState!.save();
+                if (isTermsAccepted){
+                  context.read<SignupCubit>().createUserWithEmailAndPassword(email, password, name);
+                }else{
+                   showSnackBar(context, message: "please_accept_terms".tr(), backgroundColor: Colors.red);
+                }
+
+
+
+              }else{
+                setState(() {
+                  autoValidateMode = AutovalidateMode.always;
+                });
+              }
+            }),
+            const SizedBox(
+              height: 26,
+            ),
+            const AlreadyHaveAccount(),
+            SizedBox(
+              height: 20,
+            ),
+          ],
+        ),
       ),
     );
   }

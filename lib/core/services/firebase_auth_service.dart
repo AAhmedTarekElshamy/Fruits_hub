@@ -1,4 +1,7 @@
 
+import 'dart:developer';
+
+import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fruits_hub/features/auth/domain/entities/user_entity.dart';
 
@@ -13,17 +16,23 @@ Future<User> createUserWithEmailAndPassword(String email, String password,  ) as
     );
     return credential.user!;
   } on FirebaseAuthException catch (e) {
+    log('Exception in FirebaseAuthException.createUserWithEmailAndPassword : ${e.toString()} and code is ${e.code}');
     if (e.code == 'weak-password') {
-      throw CustomException(message: 'The password provided is too weak.', );
+      throw CustomException(message: "weak_password".tr(), );
      // print('The password provided is too weak.');
     } else if (e.code == 'email-already-in-use') {
-     throw CustomException(message: 'The account already exists for that email.', );
+     throw CustomException(message: "account_already_exists".tr(), );
       // print('The account already exists for that email.');
-    }else{
-      throw CustomException(message: 'Something went wrong', );
+    }else if (e.code == 'network-request-failed') {
+      throw CustomException(message: "no_internet_connection".tr());
+
+    }
+    else{
+      throw CustomException(message: "Something_went_wrong".tr(), );
     }
   } catch (e) {
-    throw CustomException(message:'Something went wrong', );
+    log('Exception in FirebaseAuthException.createUserWithEmailAndPassword : ${e.toString()} ');
+    throw CustomException(message:"Something_went_wrong".tr(), );
     //print(e);
   }
 

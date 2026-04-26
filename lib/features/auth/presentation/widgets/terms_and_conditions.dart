@@ -7,8 +7,8 @@ import 'package:fruits_hub/core/utils/app_colors.dart';
 import '../../../../core/utils/app_text_styles.dart';
 
 class TermsAndConditions extends StatefulWidget {
-  const TermsAndConditions({super.key});
-
+  const TermsAndConditions({super.key, required this.onChanged});
+final ValueChanged<bool> onChanged;
   @override
   State<TermsAndConditions> createState() => _TermsAndConditionsState();
 }
@@ -36,6 +36,7 @@ class _TermsAndConditionsState extends State<TermsAndConditions> {
               onChanged: (value) {
                 setState(() {
                   isChecked = value!;
+                  widget.onChanged(value);
                 });
               },
             ),

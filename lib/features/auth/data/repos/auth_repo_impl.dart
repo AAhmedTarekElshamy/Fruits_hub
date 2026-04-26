@@ -1,4 +1,7 @@
+import 'dart:developer';
+
 import 'package:dartz/dartz.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:fruits_hub/core/errors/failures.dart';
 import 'package:fruits_hub/features/auth/domain/entities/user_entity.dart';
 import 'package:fruits_hub/features/auth/domain/repos/auth_repo.dart';
@@ -23,8 +26,9 @@ class AuthRepoImpl extends AuthRepo {
       return right(UserModel.fromFirebaseUser(user));
     } on CustomException catch (e) {
       return left(ServerFailure(e.message));
-    } catch(e){
-      return left(ServerFailure('Something went wrong'));
+    } catch (e) {
+      log('Exception in AuthRepoImpl.createUserWithEmailAndPassword : ${e.toString()}');
+      return left(ServerFailure("Something_went_wrong".tr()));
     }
   }
 }
