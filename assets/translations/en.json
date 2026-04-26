@@ -28,6 +28,7 @@
   "weak_password": "The password provided is too weak.",
   "signup_success" :"Signup successful",
   "please_accept_terms": "please_accept_terms",
-  "no_internet_connection": "no_internet_connection"
+  "no_internet_connection": "no_internet_connection",
+  "wrong_password_or_email": "wrong password or wrong email"
 
 }

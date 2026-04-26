@@ -29,6 +29,7 @@
   "weak_password": "الرقم السري ضعيف جدا",
   "signup_success": "نجح تسجيل الدخول",
   "please_accept_terms": "يجب الموافقة علي الشروط و الأحكام",
-  "no_internet_connection": "لا يوجد انترنت"
+  "no_internet_connection": "لا يوجد انترنت",
+  "wrong_password_or_email": "الرقم السري أو البريد الألكتروني غير صحيح"
 
 }
