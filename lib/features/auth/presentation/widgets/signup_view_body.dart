@@ -8,7 +8,7 @@ import 'package:fruits_hub/features/auth/presentation/widgets/terms_and_conditio
 import '../../../../core/helper_functions/snackbar.dart';
 import '../../../../core/widgets/custom_text_field.dart';
 import '../../../../core/widgets/password_field.dart';
-import '../cubits/signup_cubit/cubit.dart';
+import '../cubits/signup_cubit/signup_cubit.dart';
 
 import 'already_have_account.dart';
 
@@ -20,11 +20,11 @@ class SignupViewBody extends StatefulWidget {
 }
 
 class _SignupViewBodyState extends State<SignupViewBody> {
-  final GlobalKey<FormState>  formKey = GlobalKey<FormState>();
-  AutovalidateMode  autoValidateMode = AutovalidateMode.disabled;
- late String name ,email ,password;
+  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  AutovalidateMode autoValidateMode = AutovalidateMode.disabled;
+  late String name, email, password;
 
-  late   bool isTermsAccepted = false;
+  late bool isTermsAccepted = false;
 
   @override
   Widget build(BuildContext context) {
@@ -45,51 +45,58 @@ class _SignupViewBodyState extends State<SignupViewBody> {
                 name = value!;
               },
             ),
-
             const SizedBox(
               height: 16,
             ),
             CustomTextField(
               hintText: "email".tr(),
               textInputType: TextInputType.emailAddress,
-              onSaved: (value){
+              onSaved: (value) {
                 email = value!;
               },
             ),
             const SizedBox(
               height: 16,
             ),
-            PasswordField(onSaved: (value) {
-              password = value!;
-            },),
+            PasswordField(
+              onSaved: (value) {
+                password = value!;
+              },
+            ),
             const SizedBox(
               height: 16,
             ),
-            TermsAndConditions(onChanged: (value) {
-              setState(() {
-                isTermsAccepted = value;
-              });
-            },),
+            TermsAndConditions(
+              onChanged: (value) {
+                setState(() {
+                  isTermsAccepted = value;
+                });
+              },
+            ),
             const SizedBox(
               height: 30,
             ),
-            CustomButton(label: "create_new_account".tr(), onPressed: () {
-              if (formKey.currentState!.validate()) {
-                formKey.currentState!.save();
-                if (isTermsAccepted){
-                  context.read<SignupCubit>().createUserWithEmailAndPassword(email, password, name);
-                }else{
-                   showSnackBar(context, message: "please_accept_terms".tr(), backgroundColor: Colors.red);
-                }
-
-
-
-              }else{
-                setState(() {
-                  autoValidateMode = AutovalidateMode.always;
-                });
-              }
-            }),
+            CustomButton(
+                label: "create_new_account".tr(),
+                onPressed: () {
+                  if (formKey.currentState!.validate()) {
+                    formKey.currentState!.save();
+                    if (isTermsAccepted) {
+                      context
+                          .read<SignupCubit>()
+                          .createUserWithEmailAndPassword(
+                              email, password, name);
+                    } else {
+                      showSnackBar(context,
+                          message: "please_accept_terms".tr(),
+                          backgroundColor: Colors.red);
+                    }
+                  } else {
+                    setState(() {
+                      autoValidateMode = AutovalidateMode.always;
+                    });
+                  }
+                }),
             const SizedBox(
               height: 26,
             ),

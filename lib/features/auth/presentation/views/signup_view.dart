@@ -6,8 +6,8 @@ import 'package:get_it/get_it.dart';
 
 import '../../../../core/helper_functions/snackbar.dart';
 import '../../../../core/widgets/custom_app_bar.dart';
-import '../cubits/signup_cubit/cubit.dart';
-import '../cubits/signup_cubit/state.dart';
+import '../cubits/signup_cubit/signup_cubit.dart';
+import '../cubits/signup_cubit/signup_states.dart';
 import '../widgets/signup_view_body.dart';
 
 class SignupView extends StatelessWidget {

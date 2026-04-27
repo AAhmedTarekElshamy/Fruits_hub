@@ -52,6 +52,7 @@ class _PasswordFieldState extends State<PasswordField> {
   Widget build(BuildContext context) {
     return CustomTextField(
       obscureText: isObscure,
+      onSaved: widget.onSaved,
       hintText: "password".tr(),
       textInputType: TextInputType.visiblePassword,
       suffixIcon: IconButton(
@@ -63,7 +64,7 @@ class _PasswordFieldState extends State<PasswordField> {
           color: const Color(0xffC9CECF),
         ),
       ),
-      onSaved: widget.onSaved,
+
     );
   }
 }
