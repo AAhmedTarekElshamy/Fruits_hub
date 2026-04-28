@@ -99,16 +99,21 @@ class _SignInViewBodyState extends State<SignInViewBody> {
                 height: 16,
               ),
               SocialButton( onPressed: (){
-                context.read<SignInCubit>().signinWithGoogle();
+                context.read<SignInCubit>().signInWithGoogle();
               },text: "login_google".tr(),icon: Assets.images.googleSocialIcons.path,),
               const  SizedBox(
                 height: 16,
               ),
-              SocialButton( onPressed: (){},text: "login_apple".tr(),icon: Assets.images.appleSocialIcons.path,),
+              SocialButton( onPressed: (){
+                context.read<SignInCubit>().signInWithFacebook();
+              },text: "login_facebook".tr(),icon: Assets.images.facebookSocialIcons.path,),
+
               const  SizedBox(
                 height: 16,
               ),
-              SocialButton( onPressed: (){},text: "login_facebook".tr(),icon: Assets.images.facebookSocialIcons.path,),
+              SocialButton( onPressed: (){
+                context.read<SignInCubit>().signInWithApple();
+              },text: "login_apple".tr(),icon: Assets.images.appleSocialIcons.path,),
 
             ],
           ),
