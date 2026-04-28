@@ -112,7 +112,7 @@ class _SignInViewBodyState extends State<SignInViewBody> {
                 height: 16,
               ),
               SocialButton( onPressed: (){
-                context.read<SignInCubit>().signInWithApple();
+                context.read< SignInCubit >().signInWithApple();
               },text: "login_apple".tr(),icon: Assets.images.appleSocialIcons.path,),
 
             ],
