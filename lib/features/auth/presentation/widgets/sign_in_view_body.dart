@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -111,9 +113,9 @@ class _SignInViewBodyState extends State<SignInViewBody> {
               const  SizedBox(
                 height: 16,
               ),
-              SocialButton( onPressed: (){
+           Platform.isIOS ? SocialButton( onPressed: (){
                 context.read< SignInCubit >().signInWithApple();
-              },text: "login_apple".tr(),icon: Assets.images.appleSocialIcons.path,),
+              },text: "login_apple".tr(),icon: Assets.images.appleSocialIcons.path,) : const SizedBox(),
 
             ],
           ),
