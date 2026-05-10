@@ -12,6 +12,12 @@ import 'package:sign_in_with_apple/sign_in_with_apple.dart';
 import '../errors/exceptions.dart';
 
 class FirebaseAuthService {
+
+  Future deleteUserData() async {
+    await FirebaseAuth.instance.currentUser!.delete();
+  }
+
+
   Future<User> createUserWithEmailAndPassword(
     String email,
     String password,
@@ -103,14 +109,19 @@ class FirebaseAuthService {
   }
 
 
-    Future<User> signInWithFacebook() async {
-       final LoginResult loginResult = await FacebookAuth.instance.login();
+  Future<User> signInWithFacebook() async {
+    final LoginResult loginResult =
+    await FacebookAuth.instance.login();
 
-       final OAuthCredential facebookAuthCredential = FacebookAuthProvider.credential(loginResult.accessToken!.token);
+    final OAuthCredential facebookAuthCredential =
+    FacebookAuthProvider.credential(
+      loginResult.accessToken!.tokenString,
+    );
 
-       return (await FirebaseAuth.instance.signInWithCredential(facebookAuthCredential)).user!;
-    }
-
+    return (await FirebaseAuth.instance
+        .signInWithCredential(facebookAuthCredential))
+        .user!;
+  }
 
 
 

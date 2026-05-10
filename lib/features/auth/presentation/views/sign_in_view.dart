@@ -2,6 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruits_hub/features/auth/domain/repos/auth_repo.dart';
+import 'package:fruits_hub/features/home/presentation/views/home_view.dart';
 import 'package:get_it/get_it.dart';
 
 import '../../../../core/helper_functions/snackbar.dart';
@@ -28,6 +29,7 @@ class LoginView extends StatelessWidget {
               showSnackBar(context,
                   message: "signup_success".tr(),
                   backgroundColor: Colors.green);
+              Navigator.pushNamed(context, HomeView.routeName);
             } else if (state is SignInFailure) {
               showSnackBar(context,
                   message: state.message, backgroundColor: Colors.red);

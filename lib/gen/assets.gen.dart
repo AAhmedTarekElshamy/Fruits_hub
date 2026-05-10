@@ -20,6 +20,10 @@ class $AssetsImagesGen {
   /// File path: assets/images/Check.svg
   SvgGenImage get check => const SvgGenImage('assets/images/Check.svg');
 
+  /// File path: assets/images/Ellipse 11.png
+  AssetGenImage get ellipse11 =>
+      const AssetGenImage('assets/images/Ellipse 11.png');
+
   /// File path: assets/images/FacebookSocial Icons.svg
   SvgGenImage get facebookSocialIcons =>
       const SvgGenImage('assets/images/FacebookSocial Icons.svg');
@@ -30,6 +34,10 @@ class $AssetsImagesGen {
 
   /// File path: assets/images/Vector.svg
   SvgGenImage get vector => const SvgGenImage('assets/images/Vector.svg');
+
+  /// File path: assets/images/app_bar_image.svg
+  SvgGenImage get appBarImage =>
+      const SvgGenImage('assets/images/app_bar_image.svg');
 
   /// File path: assets/images/app_icon.png
   AssetGenImage get appIcon =>
@@ -90,8 +98,12 @@ class $AssetsImagesGen {
   SvgGenImage get plant => const SvgGenImage('assets/images/plant.svg');
 
   /// File path: assets/images/profile_image.png
-  AssetGenImage get profileImage =>
+  AssetGenImage get profileImagePng =>
       const AssetGenImage('assets/images/profile_image.png');
+
+  /// File path: assets/images/profile_image.svg
+  SvgGenImage get profileImageSvg =>
+      const SvgGenImage('assets/images/profile_image.svg');
 
   /// File path: assets/images/search_icon.svg
   SvgGenImage get searchIcon =>
@@ -111,9 +123,11 @@ class $AssetsImagesGen {
   /// List of all assets
   List<dynamic> get values => [
         check,
+        ellipse11,
         facebookSocialIcons,
         googleSocialIcons,
         vector,
+        appBarImage,
         appIcon,
         appleSocialIcons,
         edit,
@@ -130,7 +144,8 @@ class $AssetsImagesGen {
         pageViewItem2BackgroundImage,
         pageViewItem2Image,
         plant,
-        profileImage,
+        profileImagePng,
+        profileImageSvg,
         searchIcon,
         splashBottom,
         trash,

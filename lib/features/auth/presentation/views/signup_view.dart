@@ -31,6 +31,7 @@ class SignupView extends StatelessWidget {
                 showSnackBar(context,
                     message: "signup_success".tr(),
                     backgroundColor: Colors.green);
+                Navigator.pop(context);
               } else if (state is SignupFailure) {
                 showSnackBar(context,
                     message: state.message, backgroundColor: Colors.red);
